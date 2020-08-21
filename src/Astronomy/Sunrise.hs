@@ -9,13 +9,13 @@ import Astronomy.Utils(cossin, deg2rad, floatMod, pi2, rad2turns, toNumberOfDays
 import Data.Time.Calendar(Day(ModifiedJulianDay))
 import Data.Time.Clock(UTCTime)
 
--- sunrise :: (Floating a, Ord a) => Day -> (a, a) -> Planet a -> (a, a)
+sunrise :: (Floating a, Ord a) => Day -> (a, a) -> Planet a -> (a, a)
 sunrise = _sunrise . toNumberOfDays
 
 sinCorrection :: Floating a => a
 sinCorrection = sin (-deg2rad 0.83)
 
--- _sunrise :: (Floating a, Ord a) => a -> (a, a) -> Planet a -> (a, a)
+_sunrise :: (Floating a, Ord a) => a -> (a, a) -> Planet a -> (a, a)
 _sunrise n (latitude, longitude) Planet {maximumAxialTilt=mat, argumentOfPeriapsis=arpe, orbitalEccentricity=e} = _jSetRise jtransit w0
     where w0 = _hourAngle latitude sindec
           jstar = _meanSolarNoon n longitude
@@ -49,6 +49,3 @@ _eclipticLongitude nu arpe = nu + pi + arpe
 
 meanSolarNoon :: Floating a => Day -> a -> a
 meanSolarNoon utc = _meanSolarNoon (toNumberOfDays utc)
-
--- _equationOfCenter :: Floating a => a -> a
--- _equationOfCenter m = m + deg2rad 1.9148 * sin m + deg2rad 0.02 * sin (2*m) + deg2rad 0.0003 * sin (3*m)
