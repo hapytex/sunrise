@@ -4,13 +4,13 @@ module Astronomy.Sunrise where
 
 import Astronomy.Planet(Planet(Planet, maximumAxialTilt, argumentOfPeriapsis, orbitalEccentricity))
 import Astronomy.Orbital(equationOfTheCenter')
-import Astronomy.Utils(cossin, deg2rad, floatMod, pi2, rad2turns, toNumberOfDays)
+import Astronomy.Utils(both, cossin, deg2rad, floatMod, pi2, rad2turns, toNumberOfDays, toUTCTime)
 
-import Data.Time.Calendar(Day(ModifiedJulianDay))
+import Data.Time.Calendar(Day)
 import Data.Time.Clock(UTCTime)
 
-sunrise :: (Floating a, Ord a) => Day -> (a, a) -> Planet a -> (a, a)
-sunrise = _sunrise . toNumberOfDays
+sunrise :: (Floating a, Ord a) => Day -> (a, a) -> Planet a -> (UTCTime, UTCTime)
+sunrise d loc = both toUTCTime . _sunrise (toNumberOfDays d) loc
 
 sinCorrection :: Floating a => a
 sinCorrection = sin (-deg2rad 0.83)
