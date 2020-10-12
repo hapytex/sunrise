@@ -23,7 +23,7 @@ venus = Planet { angularVelocity= -0.00107434, maximumAxialTilt= deg2rad 177.36,
 
 -- https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html
 earth :: Floating a => Planet a
-earth = Planet { angularVelocity= pi / 12.0, maximumAxialTilt=(deg2rad (23 + 43661 / 60000)), argumentOfPeriapsis=(deg2rad 102.94719), orbitalEccentricity=0.01671022 }
+earth = Planet { angularVelocity= pi / 12.0, maximumAxialTilt=deg2rad (23 + 43661 / 60000), argumentOfPeriapsis=deg2rad 102.94719, orbitalEccentricity=0.01671022 }
 
 -- https://nssdc.gsfc.nasa.gov/planetary/factsheet/marsfact.html
 mars :: Floating a => Planet a

@@ -17,7 +17,7 @@ power2s x = scanl (*) 1 (repeat x2)
     where x2 = x*x
 
 besselDenominators :: (Integral i, Integral j) => i -> [j]
-besselDenominators n = (zipWith (*) swapFactorials (factorialsOffset (fromIntegral n)))
+besselDenominators n = zipWith (*) swapFactorials (factorialsOffset (fromIntegral n))
 
 besselFunction' :: (Integral i, Integral j, Fractional a) => Int -> i -> j -> a -> a -> a
 besselFunction' k n nfac x2n xhalf = x2n * sum (zipWith (/) (take k (power2s xhalf)) dens)
