@@ -1,5 +1,6 @@
 # sunrise
-[![Build Status of the package by Travis](https://travis-ci.com/hapytex/sunrise.svg?branch=master)](https://travis-ci.com/hapytex/sunrise)
+
+[![Build Status of the package by GitHub actions](https://github.com/hapytex/sunrise/actions/workflows/build-ci.yml/badge.svg)](https://github.com/hapytex/sunrise/actions/workflows/build-ci.yml)
 [![Build Status of the package by Hackage](https://matrix.hackage.haskell.org/api/v2/packages/sunrise/badge)](https://matrix.hackage.haskell.org/#/package/sunrise)
 [![Hackage version badge](https://img.shields.io/hackage/v/sunrise.svg)](https://hackage.haskell.org/package/sunrise)
 
@@ -18,4 +19,3 @@ repository*](https://github.com/hapytex/sunrise).
 
 You can contact the package maintainer by sending a mail to
 [`hapytexeu+gh@gmail.com`](mailto:hapytexeu+gh@gmail.com).
-
