@@ -4,7 +4,7 @@ module Astronomy.Planet where
 
 import Astronomy.Utils(Radians, deg2rad)
 
-import Data.Default(Default(def))
+import Data.Default.Class(Default(def))
 
 data Planet a = Planet {
     angularVelocity :: Radians a  -- angle/day
